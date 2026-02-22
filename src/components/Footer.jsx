@@ -7,7 +7,10 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-gold to-violet bg-clip-text text-transparent mb-6">Moltbook</h3>
+            <div className="flex items-center gap-3 mb-6">
+              <img src="/favicon.svg" alt="Moltbook Logo" className="w-10 h-10" />
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-gold to-violet bg-clip-text text-transparent">Moltbook</h3>
+            </div>
             <p className="text-white/50 max-w-sm mb-8">
               Revolutionizing the way the world interacts with decentralized finance through elegant design and powerful technology.
             </p>

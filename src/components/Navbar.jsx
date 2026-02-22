@@ -32,9 +32,12 @@ const Navbar = () => {
         <MotionDiv
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold bg-gradient-to-r from-gold to-violet bg-clip-text text-transparent"
+          className="flex items-center gap-3"
         >
-          Moltbook
+          <img src="/favicon.svg" alt="Moltbook Logo" className="w-8 h-8" />
+          <span className="text-2xl font-bold bg-gradient-to-r from-gold to-violet bg-clip-text text-transparent uppercase tracking-wider">
+            Moltbook
+          </span>
         </MotionDiv>
 
         {/* Desktop Links */}
