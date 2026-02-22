@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-violet: #8B5CF6;
+  --color-obsidian: #0A0A0B;
+}
+
+@layer base {
+  :root {
+    --gold: 212 175 55;
+    --violet: 139 92 246;
+  }
+
+  body {
+    @apply bg-obsidian text-white overflow-x-hidden;
+    margin: 0;
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-white/5;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(var(--gold), 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .glow-gold:hover {
+    box-shadow: 0 0 30px rgba(var(--gold), 0.4);
+  }
+
+  .glow-violet {
+    box-shadow: 0 0 20px rgba(var(--violet), 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .glow-violet:hover {
+    box-shadow: 0 0 30px rgba(var(--violet), 0.4);
+  }
+
+  .mesh-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(10, 10, 11, 1) 0%, #050505 100%);
+  }
+
+  .orb-gradient {
+    background: radial-gradient(circle at 30% 30%, #D4AF37, #8B5CF6);
+    filter: blur(2px);
+  }
+}
+
+/* Custom animations */
+@keyframes mesh-move {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.mesh-animate {
+  background-size: 200% 200%;
+  animation: mesh-move 20s ease infinite;
+}
